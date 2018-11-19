@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request,session,jsonify,json
 import connexion
 from spark_jobs import count_length,read_table
+from settings import *
+
 
 #FLASK INIT
 app=Flask(__name__)
@@ -27,4 +29,4 @@ def read_tables_hive():
         return result
 
 if __name__ == '__main__':
-    app.run(host="209.97.167.105",debug=True,port=5555)
+    app.run(host=HOST,debug=DEBUG,port=PORT)
