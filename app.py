@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request,session,jsonify,json
 import connexion
-from spark_jobs import count_length
+from spark_jobs import count_length,read_table
 
 #FLASK INIT
 app=Flask(__name__)
@@ -18,5 +18,13 @@ def run_spark_job():
         result = count_length(word)
         return jsonify(length=result)
 
+@app.route('/query', methods = ['POST'])
+def read_tables_hive():
+    if request.headers['Content-Type'] == 'application/json':
+        parameters = request.json
+        table_name = parameters['table_name']
+        result = read_table(table_name)
+        return result
+
 if __name__ == '__main__':
-    app.run(debug=True,port=5000)
+    app.run(host="209.97.167.105",debug=True,port=5555)
