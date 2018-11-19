@@ -1,5 +1,3 @@
-import findspark
-findspark.init()
 
 def count_length(string):
     from spark import get_spark
