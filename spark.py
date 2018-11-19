@@ -1,3 +1,6 @@
+import findspark
+findspark.init()
+
 from pyspark.conf import SparkConf
 from pyspark.sql import SparkSession
 from functools import lru_cache
@@ -5,9 +8,6 @@ from settings import *
 
 @lru_cache(maxsize=None)
 def get_spark():
-    import findspark
-    findspark.init()
-
     APP_NAME = "demo_api_spark"
     spark_conf = (SparkConf()
     .setAppName(APP_NAME)
