@@ -17,6 +17,7 @@ def run_spark_job():
     if request.headers['Content-Type'] == 'application/json':
         parameters = request.json
         word = parameters['word']
+        result = 0
         result = count_length(word)
         return jsonify(length=result)
 
