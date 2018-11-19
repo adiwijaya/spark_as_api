@@ -31,7 +31,7 @@ def read_tables_hive():
 def main():
     try:
         app.run(host=HOST,debug=DEBUG,port=PORT)
-    finally:
+    #finally:
         #terminate_spark()
 
 if __name__ == '__main__':
