@@ -13,6 +13,6 @@ def read_table(table_name):
     import pandas as pd
     spark_session = get_spark()
     result = spark_session.sql("SELECT * FROM %s"%table_name)
-    pandas_df = df.toPandas()
+    pandas_df = result.toPandas()
     json_result = pandas_df.to_json
     return json_result
