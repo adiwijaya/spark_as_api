@@ -28,11 +28,11 @@ def read_tables_hive():
         result = read_table(table_name)
         return result
 
-def main():
-    try:
-        app.run(host=HOST,debug=DEBUG,port=PORT)
+#def main():
+#    try:
+#        app.run(host=HOST,debug=DEBUG,port=PORT)
     #finally:
         #terminate_spark()
 
 if __name__ == '__main__':
-    main()
+    app.run(host=HOST,debug=DEBUG,port=PORT)
