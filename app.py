@@ -32,7 +32,7 @@ def main():
     try:
         app.run(host=HOST,debug=DEBUG,port=PORT)
     finally:
-        terminate_spark()
+        #terminate_spark()
 
 if __name__ == '__main__':
     main()
