@@ -2,7 +2,7 @@ def count_length(string):
     from spark import get_spark
     spark_session = get_spark()
 
-    sc = spark_session.sparkContext()
+    sc = spark_session.sparkContext
     list_string = list(string)
     rdd = sc.parallelize(list_string)
     count = rdd.count()
